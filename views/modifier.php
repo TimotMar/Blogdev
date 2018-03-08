@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<p><a href="index.post.php">Retour à la liste des billets</a></p>
+<p><a href="../index.post.php">Retour à la liste des billets</a></p>
 
 <div class="news">
     <h3>
@@ -17,7 +17,7 @@
 
 <h2>Commentaires</h2>
 
-<form action="index.post.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+<form action="../index.post.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="author">Auteur</label><br />
         <input type="text" id="author" name="author" />
@@ -42,4 +42,4 @@ while ($comment = $comments->fetch())
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('views/frontend/template.php'); ?>

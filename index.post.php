@@ -1,10 +1,10 @@
 <?php
 session_start();
 require("bootstrap/local.php");
-require("includes/functions.php");
+require("controller/includes/functions.php");
 require("views/index.post.view.php");
 require('controller/frontend.php');
-include('filter/user_filter.php');
+include('controller/filter/user_filter.php');
 
 
 

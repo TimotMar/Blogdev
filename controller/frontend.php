@@ -52,7 +52,7 @@ function addComment($postId, $author, $comment)
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: index.post.php?action=post&id=' . $postId);
+        header('Location: /index.post.php?action=post&id=' . $postId);
     }
 }
 
@@ -66,7 +66,7 @@ function addPost($title, $content, $pseudonyme)
         throw new Exception('Impossible d\'ajouter l\'article !');
     }
     else {
-        header('Location: index.post.php');
+        header('Location: /index.post.php');
     }
 }
 
@@ -80,7 +80,7 @@ if ($affectedPosts === false) {
         throw new Exception('Impossible de changer l\'article !');
     }
     else {
-        header('Location: index.post.php?action=modifier&id=' . $id);
+        header('Location: /index.post.php?action=modifier&id=' . $id);
     }
 }
 
@@ -94,6 +94,6 @@ if ($affectedPosts === false) {
         throw new Exception('Impossible de supprimer l\'article !');
     }
     else {
-        header('Location: index.post.php');
+        header('Location: /index.post.php');
     }
 }

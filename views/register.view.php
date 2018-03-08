@@ -1,5 +1,5 @@
 <?php $title = "Inscription"; ?>
-<?php include('partials/_header.php'); ?>
+<?php include('views/partials/_header.php'); ?>
 
 
 <div id="main-content">
@@ -7,7 +7,7 @@
         <h1 class="lead"> Devenez membre dès à présent !</h1>
 
         <?php
-        include('partials/_errors.php')
+        include('views/partials/_errors.php')
         ?>
         <form data-parsley-validate method="post" class="well col-md-6">
             <!-- Name field -->
@@ -55,4 +55,4 @@
 </div>
 
 
-<?php include('partials/_footer.php'); ?>
+<?php include('views/partials/_footer.php'); ?>

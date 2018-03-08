@@ -15,7 +15,7 @@
                 <h3 class="panel-title">Compléter mon profil</h3>
             </div>
             <div class="panel-body">
-                <?php include('partials/_errors.php');?>
+                <?php include('views/partials/_errors.php');?>
                 <form data-parsley-validate method="post" autocomplete="off">
                     <div class="row">
                         <div class="col-md-6">

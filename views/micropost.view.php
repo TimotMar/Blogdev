@@ -1,5 +1,5 @@
 <?php $title = "Blog"; ?>
-<?php include('partials/_header.php'); ?>
+<?php include('views/partials/_header.php'); ?>
 
 
 <div id="main-content">
@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-6">
                     <div class="status-post">
-                        <form action="microposts.php" method="post" data-parsley-validate>
+                        <form action="../model/microposts.php" method="post" data-parsley-validate>
                             <div class="form-group">
                                 <input type="text" id="pseudopost" name="pseudopost" placeholder="Votre pseudo">
                                 <label for="content" class="sr-only">Statut : </label><!-- sr only : que pr les malvoyant-->
@@ -46,10 +46,10 @@
 <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script> 
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.timeago.js"></script>
-<script src="assets/js/jquery.timeago.fr.js"></script>
-<script src="libraries/parsley/i18n/fr.js"></script>
-<script src="libraries/parsley/parsley.min.js"></script>
+<script src="../public/assets/js/jquery.timeago.js"></script>
+<script src="../public/assets/js/jquery.timeago.fr.js"></script>
+<script src="../libraries/parsley/i18n/fr.js"></script>
+<script src="../libraries/parsley/parsley.min.js"></script>
 
 <script>window.Parsley.setLocale('fr');</script>
 <script type="text/javascript">
