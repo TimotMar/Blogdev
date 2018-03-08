@@ -1,15 +1,15 @@
 <?php
 
 // Chargement des classes
-require_once('../model/PostManager.php');
-require_once('../model/CommentManager.php');
+require_once('model/PostManager.php');
+require_once('model/CommentManager.php');
 
 function listPosts()
 {
     $postManager = new \Devnetwork\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
 
-    require('../views/frontend/listPostsView.php');
+    require('views/frontend/listPostsView.php');
 }
 
 function post()
@@ -20,7 +20,7 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    require('../views/frontend/postView.php');
+    require('views/frontend/postView.php');
 }
 
 function modifier()
@@ -29,7 +29,7 @@ function modifier()
 
     $post = $postManager->getPost($_GET['id']);
 
-    require('../views/frontend/modifier.php');
+    require('views/frontend/modifier.php');
 }
 
 function delete()
@@ -37,7 +37,7 @@ function delete()
     $postManager = new \Devnetwork\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
 
-    require('../views/frontend/listPostsView.php');
+    require('views/frontend/listPostsView.php');
 }
 
 
@@ -52,7 +52,7 @@ function addComment($postId, $author, $comment)
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: ../index.post.php?action=post&id=' . $postId);
+        header('Location: /index.post.php?action=post&id=' . $postId);
     }
 }
 
@@ -66,7 +66,7 @@ function addPost($title, $content, $pseudonyme)
         throw new Exception('Impossible d\'ajouter l\'article !');
     }
     else {
-        header('Location: ../index.post.php');
+        header('Location: /index.post.php');
     }
 }
 
@@ -80,7 +80,7 @@ if ($affectedPosts === false) {
         throw new Exception('Impossible de changer l\'article !');
     }
     else {
-        header('Location: ../index.post.php?action=modifier&id=' . $id);
+        header('Location: /index.post.php?action=modifier&id=' . $id);
     }
 }
 
@@ -94,6 +94,6 @@ if ($affectedPosts === false) {
         throw new Exception('Impossible de supprimer l\'article !');
     }
     else {
-        header('Location: ../index.post.php');
+        header('Location: /index.post.php');
     }
 }
