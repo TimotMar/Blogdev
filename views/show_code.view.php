@@ -1,5 +1,5 @@
 <?php $title = "Affichage code source"; ?>
-<?php include('partials/_header.php'); ?>
+<?php include('views/partials/_header.php'); ?>
 
 
 <div id="main-content">
@@ -17,7 +17,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="public/assets/js/google-code-prettify/prettify.js"></script>
 <script>//se trouve au niveau de prettify.js
     prettyPrint();
 </script>

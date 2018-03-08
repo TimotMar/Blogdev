@@ -1,5 +1,5 @@
 <?php $title = "Edition de Profil"; ?>
-<?php include('partials/_header.php'); ?>
+<?php include('views/partials/_header.php'); ?>
 
 
     <div id="main-content">
@@ -15,7 +15,7 @@
                 <h3 class="panel-title">Compléter mon profil</h3>
             </div>
             <div class="panel-body">
-                <?php include('partials/_errors.php');?>
+                <?php include('views/partials/_errors.php');?>
                 <form data-parsley-validate method="post" autocomplete="off">
                     <div class="row">
                         <div class="col-md-6">
@@ -133,4 +133,4 @@ if(isset($_FILES['mon_fichier']))
 
                         </div><!-- /.container -->
                         </div>
-                        <?php include('partials/_footer.php'); ?>
+                        <?php include('views/partials/_footer.php'); ?>
