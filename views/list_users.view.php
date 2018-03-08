@@ -1,5 +1,5 @@
 <?php $title = "Liste des utilisateurs"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('partials/_header.php'); ?>
 
 
     <div id="main-content">
@@ -27,4 +27,4 @@
     </div>
 
 
-<?php include('views/partials/_footer.php'); ?>
+<?php include('partials/_footer.php'); ?>

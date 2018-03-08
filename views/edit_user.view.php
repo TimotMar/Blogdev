@@ -1,5 +1,5 @@
 <?php $title = "Edition de Profil"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('partials/_header.php'); ?>
 
 
     <div id="main-content">
@@ -133,4 +133,4 @@ if(isset($_FILES['mon_fichier']))
 
                         </div><!-- /.container -->
                         </div>
-                        <?php include('views/partials/_footer.php'); ?>
+                        <?php include('partials/_footer.php'); ?>

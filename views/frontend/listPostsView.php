@@ -1,12 +1,12 @@
 <?php $title = "Page de Profil"; ?>
-<?php include('../views/partials/_header.php');
-include('../../controller/filter/user_filter.php'); ?>
+<?php include('views/partials/_header.php');
+include('controller/filter/user_filter.php'); ?>
 
 
 <?php ob_start(); ?>
 <h1>Mon blog!</h1>
 <div class="champ" style="text-align : center;">
-<form action="../../index.post.php?action=addPost" method="post">
+<form action="/index.post.php?action=addPost" method="post">
     <div>
         <label for="title">Titre</label><br />
         <input style="width: 450px;" type="text" id="title" name="title" />
@@ -42,9 +42,9 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?>
             <br />
-            <em><a href="../../index.post.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>//
-            <em><a href="../../index.post.php?action=modifier&amp;id=<?= $data['id'] ?>">Modifier</a></em>//
-            <em><a href="../../index.post.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
+            <em><a href="/index.post.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>//
+            <em><a href="/index.post.php?action=modifier&amp;id=<?= $data['id'] ?>">Modifier</a></em>//
+            <em><a href="/index.post.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
         </p>
     </div>
 <?php
@@ -53,4 +53,4 @@ $posts->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../views/frontend/template.php'); ?>
+<?php require('views/frontend/template.php'); ?>

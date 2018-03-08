@@ -1,6 +1,6 @@
 <nav class="navbar">
 
-    <a class="navbar-brand" href="index.php"><?php echo WEBSITE_NAME;?></a>
+    <a class="navbar-brand" href="/index.php"><?php echo WEBSITE_NAME;?></a>
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
             <li><a href="../../model/list_users.php">Liste des utilisateurs</a>
@@ -20,7 +20,7 @@
                             <a href="../../model/edit_user.php?id=<?= get_session('user_id')?>">Edition de profil </a>
                         </li>
                         <li class="dropdown-item">
-                            <a href="../../index.post.php">Blog</a>
+                            <a href="/index.post.php">Blog</a>
                         </li>
                         <li class="divider"></li>
                         <li class="nav-item dropdown-item">

@@ -1,5 +1,5 @@
 <?php $title = "Accueil";?>
-<?php include('../controller/includes/constants.php'); ?>
+<?php include('controller/includes/constants.php'); ?>
 <?php include('views/partials/_header.php'); ?>
 
 

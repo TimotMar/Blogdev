@@ -1,5 +1,5 @@
 <?php $title = "Page de Profil"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('partials/_header.php'); ?>
 
 
     <div id="main-content">

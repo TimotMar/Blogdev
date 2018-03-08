@@ -1,5 +1,5 @@
 <?php $title = "Connexion"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('partials/_header.php'); ?>
 
 
     <div id="main-content">
@@ -7,7 +7,7 @@
             <h1 class="lead"> Connexion</h1>
 
             <?php
-            include('views/partials/_errors.php')
+            include('partials/_errors.php')
             ?>
             <form data-parsley-validate method="post" class="well col-md-6">
                 <!-- identifiant field -->
@@ -35,4 +35,4 @@
     </div>
 
 
-<?php include('views/partials/_footer.php'); ?>
+<?php include('partials/_footer.php'); ?>

@@ -2,10 +2,10 @@
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<p><a href="../../index.post.php">Retour à la liste des billets</a></p>
+<p><a href="/index.post.php">Retour à la liste des billets</a></p>
 
 <div class="champ">
-<form action="../../index.post.php?action=changePost&amp;id=<?= $post['id'] ?>" method="post">
+<form action="/index.post.php?action=changePost&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="title">Titre</label><br />
         <input style="width: 450px;" type="text" id="title" name="title" value= "<?= htmlspecialchars($post['title']) ?>"/>
@@ -25,4 +25,4 @@
 </div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../views/frontend/template.php'); ?>
+<?php require('views/frontend/template.php'); ?>
