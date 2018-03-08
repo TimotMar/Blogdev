@@ -2,7 +2,7 @@
 session_start();
 
 include('../controller/filter/user_filter.php'); // on affiche la page si et suelement si l'user est connecté
-require('model/config/database.php');
+require('config/database.php');
 require("../controller/includes/functions.php");
 require('../controller/includes/constants.php');
 
@@ -15,7 +15,7 @@ if(!empty($_GET['id']) && $_GET['id'] === get_session('user_id')){
         redirect('../index.php');
     }
 }else {
-    redirect('model/profile.php?id='.get_session('user_id')); // redirection avec le bon id
+    redirect('profile.php?id='.get_session('user_id')); // redirection avec le bon id
 }
 
 
@@ -40,7 +40,7 @@ if(isset($_POST['update'])) {
             'id' => get_session('user_id')
         ]);
         set_flash("Votre profil a été mis à jour");
-        redirect('model/profile.php?id='.get_session('user_id'));
+        redirect('profile.php?id='.get_session('user_id'));
     } else {
         save_input_data();
         $errors[] = "Veuillez remplir tous les champs marqués d'un *";

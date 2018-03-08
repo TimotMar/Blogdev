@@ -4,7 +4,7 @@ session_start();
 require('../controller/includes/constants.php');
 require("../controller/includes/functions.php");
 include('../controller/filter/user_filter.php'); // on affiche la page si et suelement si l'user est connecté
-require('model/config/database.php');
+require('config/database.php');
 
 
 
@@ -23,7 +23,7 @@ if(!empty($_GET['id'])){
         $microposts = $q->fetchAll(PDO::FETCH_OBJ);
     }
 }else {
-    redirect('model/profile.php?id='.get_session('user_id')); // redirection avec le bon id
+    redirect('profile.php?id='.get_session('user_id')); // redirection avec le bon id
 }
 
 require("../views/profile.view.php");

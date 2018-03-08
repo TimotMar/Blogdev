@@ -4,7 +4,7 @@ session_start(); //tant que la session n'a pas demarré, on ne pourra pas utilis
 //die();
 include('../controller/filter/guest_filter.php'); // seul visiteur va voir login
 require('../controller/includes/functions.php');
-require('model/config/database.php');
+require('config/database.php');
 require('../controller/includes/constants.php');
 
 // si formulaire soumis
@@ -32,7 +32,7 @@ if(isset($_POST['login'])) {
                 $_SESSION['pseudo'] = $user->pseudo;
                 $_SESSION['email'] = $user->email;// permet l'affichage de l'image gravatar
                 //on garde ça tant que la session est active. user connecté que si id et pseudo existent
-                redirect_intent_or('model/profile.php?id='.$user->id);
+                redirect_intent_or('profile.php?id='.$user->id);
             } else {
                 set_flash('Combinaison Identifiant/Password incorrecte', 'danger');
                 save_input_data();

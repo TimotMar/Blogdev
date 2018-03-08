@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('model/config/database.php');
+require('config/database.php');
 require("../controller/includes/functions.php");
 require('../controller/includes/constants.php');
 
