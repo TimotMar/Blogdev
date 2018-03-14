@@ -1,5 +1,5 @@
 <?php
-
+//managing of all the functions connected to the DB in the blog post system
 namespace Devnetwork\Blog\Model;
 
 require_once("model/Manager.php");

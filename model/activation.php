@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('../controller/filter/guest_filter.php'); //seul le visiteur peut voir activation.php
+include('../controller/filter/guest_filter.php'); //only guest can see activation.php
 require ('model/config/database.php');
 require ('../controller/includes/functions.php');
 
-if(!empty($_GET['p']) && is_already_in_use('pseudo', $_GET['p'], 'users') && !empty($_GET['token'])) //si getp existe et qu'il existe dans la BDD : on continue
+if(!empty($_GET['p']) && is_already_in_use('pseudo', $_GET['p'], 'users') && !empty($_GET['token'])) //if get p exists and is in the DB : we continue
 {
  $pseudo = $_GET['p'];
  $token = $_GET['token'];
@@ -14,7 +14,7 @@ if(!empty($_GET['p']) && is_already_in_use('pseudo', $_GET['p'], 'users') && !em
 
 
 
- $data = $q->fetch(PDO::FETCH_OBJ); // on récupere les information de la requete sous forme d'objet
+ $data = $q->fetch(PDO::FETCH_OBJ); // recovery of the informations of the request as an object
 
     $token_verif = sha1($pseudo.$data->email.$data->password);
 if($token == $token_verif){

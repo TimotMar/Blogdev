@@ -1,26 +1,26 @@
 <?php
-session_start(); //tant que la session n'a pas demarré, on ne pourra pas utiliser $session
+session_start(); //as long as the session is not started, we can't use $session
 //var_dump($_SESSION);
 //die();
-include('../controller/filter/guest_filter.php');//seul guest peut voir register
+include('../controller/filter/guest_filter.php');//only guest can see register
 require('../controller/includes/functions.php');
 require('model/config/database.php');
 require('../controller/includes/constants.php');
 
-// si formulaire soumis
+// if form is submitted
 if(isset($_POST['register']))
 {
-    //si tous les champs ont été remplis
+    //if all fields are filled
     if(not_empty(['name', 'pseudo', 'email', 'password', 'password_confirm'])){
-        $errors = []; // tableau contenant les erreurs
+        $errors = []; // array with the errors
 
-        extract($_POST); //acces a $postname avec name...
+        extract($_POST); //access to $postname with name...
 
         if(mb_strlen($pseudo) < 3){
             $errors[] = "Pseudo trop court ! (Minimum 3 caractères)";
         }
 
-        if(! filter_var($email, FILTER_VALIDATE_EMAIL)) //constante de php
+        if(! filter_var($email, FILTER_VALIDATE_EMAIL)) //constant of php
         {
             $errors[] = "Adresse email invalide!";
         }
@@ -33,7 +33,7 @@ if(isset($_POST['register']))
                 $errors[] = "Les deux mots de passe ne concordent pas";
             }
         }
-        if(is_already_in_use('pseudo', $pseudo, 'users'))//verifie unicité pseudo
+        if(is_already_in_use('pseudo', $pseudo, 'users'))//verify unicity of pseudo
         {
             $errors[] = "Pseudo déjà utilisé";
         }
@@ -44,7 +44,7 @@ if(isset($_POST['register']))
 
         if(count($errors) == 0)
         {
-            //envoi email activation
+            //send email activation
             $to = $email;
             $subject = WEBSITE_NAME. " - ACTIVATION DE COMPTE";
             $password = sha1($password);
@@ -53,14 +53,14 @@ if(isset($_POST['register']))
             ob_start();
             require('../views/templates/emails/activation.tmpl.php');
             $content = ob_get_clean();
-            //tt ce qu'on fait sera gardé en memoire tampon mais pas affiché
+            //everything will be settled in temporary memory but not not display
 
             $headers = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
             mail($to, $subject, $content, $headers);
 
-            //informer user pr verif boite de reception
+            //inform user to check mailbox
             set_flash ("Mail d'activation envoyé", "danger");
 
             $q = $db->prepare('INSERT INTO users (name, pseudo, email, password) VALUES (:name, :pseudo, :email, :password)');
@@ -78,7 +78,7 @@ if(isset($_POST['register']))
             redirect ('../index.php');
             exit();
         } else {
-            save_input_data(); //sauve les infos mais besoin d'une fonction pr les récup
+            save_input_data(); //save datas but need a function to recover them
 
         }
 

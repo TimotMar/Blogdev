@@ -1,5 +1,5 @@
 <?php
-session_start(); //tant que la session n'a pas demarré, on ne pourra pas utiliser $session
+session_start(); // as long as the session is not started, we can't use $session
 //var_dump($_SESSION);
 //die();
 include('../controller/filter/guest_filter.php'); // seul visiteur va voir login
@@ -7,12 +7,12 @@ require('../controller/includes/functions.php');
 require('config/database.php');
 require('../controller/includes/constants.php');
 
-// si formulaire soumis
+// if post 
 if(isset($_POST['login'])) {
-    //si tous les champs ont été remplis
+    //if the fields have been filled
     if (not_empty(['identifiant', 'password'])) {
 
-            extract($_POST); //permet d'avoir acces a tte les variables contenues dans le post
+            extract($_POST); //access to all the variables into the post
 
             $q = $db->prepare("SELECT id, pseudo, email FROM users 
                                         WHERE (pseudo = :identifiant OR email = :identifiant) 
@@ -21,17 +21,17 @@ if(isset($_POST['login'])) {
                 'identifiant' => $identifiant,
                 'password' => sha1($password)
             ]);
-            //si tu trouves id : utilisateur, dis moi combien tu en as trouvé
+            //if user has been found : tell me how much of them you found
             $userHasBeenFound = $q->rowCount();
 
             if($userHasBeenFound){
-                //on peut récupérer données car on a un session start
+                //we are allowed to recover datats because session is opened
                 $user = $q->fetch(PDO::FETCH_OBJ);
 
-                $_SESSION['user_id'] = $user->id; //stockage de l'id
+                $_SESSION['user_id'] = $user->id; //storage of the id
                 $_SESSION['pseudo'] = $user->pseudo;
-                $_SESSION['email'] = $user->email;// permet l'affichage de l'image gravatar
-                //on garde ça tant que la session est active. user connecté que si id et pseudo existent
+                $_SESSION['email'] = $user->email;
+                //we keep this as long as the session is active. user connected only if id and pseudo exist.
                 redirect_intent_or('profile.php?id='.$user->id);
             } else {
                 set_flash('Combinaison Identifiant/Password incorrecte', 'danger');

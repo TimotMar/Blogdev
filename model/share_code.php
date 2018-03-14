@@ -1,8 +1,9 @@
 <?php
-session_start(); //tant que la session n'a pas demarré, on ne pourra pas utiliser $session
+session_start(); //as long as the session is not started, we can't use $session
 //var_dump($_SESSION);
 //die();
-include('../controller/filter/user_filter.php'); // seul visiteur va voir login
+//this page is used for the share code system, not used in here yet
+include('../controller/filter/user_filter.php'); // onyl guest can see login
 require('../controller/includes/functions.php');
 require('model/config/database.php');
 require('../controller/includes/constants.php');
@@ -20,7 +21,7 @@ if(!empty($_GET['id'])){
     $code = "";
 }
 
-    // si formulaire soumis
+    // if form submitted
 if(isset($_POST['save'])) {
    if (not_empty(['code'])) {
 
@@ -30,7 +31,7 @@ $q = $db->prepare("INSERT INTO codes(code) VALUES(?)");
 $success = $q->execute([$code]);
 
 if($success){
-    //afficher code source
+    //displlay src code
     $id = $db->lastInsertId();
     redirect('model/show_code.php?id='.$id);
 } else{

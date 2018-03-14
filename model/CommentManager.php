@@ -1,5 +1,5 @@
 <?php
-
+//connections to the DB for the comment system
 namespace Devnetwork\Blog\Model;
 
 require_once("model/Manager.php");
