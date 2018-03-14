@@ -8,15 +8,15 @@ if(!function_exists('e')){
     }
 }
 
-//redirection vers la page dem andée
+//redirection to asked page
 if(!function_exists('redirect_intent_or')){
     function redirect_intent_or($default_url){
         if($_SESSION['forwarding_url']){
-            $url = $_SESSION['forwarding_url'];//on redirige vers la page demandée (URL)
+            $url = $_SESSION['forwarding_url'];//redirection to asked page
         } else {
             $url = $default_url;
         }
-        $_SESSION['forwarding_url'] = null;//évite une redirection en boucle
+        $_SESSION['forwarding_url'] = null;//avoid loop redirection
         redirect($url);
     }
 }
@@ -26,11 +26,11 @@ if(!function_exists('get_session')){
     function get_session($key){
         if($key){
             return !empty($_SESSION[$key]) ? e($_SESSION[$key]) : null;
-// en ternaire : return !empty($_SESSION['input'][$key]) ? $_SESSION['input'][$key] : null;
+// ternary : return !empty($_SESSION['input'][$key]) ? $_SESSION['input'][$key] : null;
         }
         }
     }
-//récupération de la langue locale
+//recovering of local language
 if(!function_exists('get_current_local')) {
     function get_current_local()
     {
@@ -83,16 +83,16 @@ if(!function_exists('find_code_by_id')){
 }
 
 
-if(!function_exists('not_empty')){ //defined verifie l'existence d'une constante et non l'existence d'une fonction
+if(!function_exists('not_empty')){ //defined : existance of a constant, not of a function
 function not_empty($fields = []){
     if(count($fields) !=0){
         foreach($fields as $field)
         {
-            if(empty($_POST [$field]) || trim($_POST[$field]) == ""){ //trim enleve les espaces, donc si vide : false
+            if(empty($_POST [$field]) || trim($_POST[$field]) == ""){ //trim escape all spaces. If empty : false
                 return false;
             }
         }
-        return true ; //tt les champs remplis
+        return true ; //fields filled
     }
     }
     }
@@ -102,12 +102,12 @@ if(!function_exists('is_already_in_use'))
     function is_already_in_use($field, $value, $table){
         global $db;
 
-        $q = $db->prepare("SELECT id FROM $table WHERE $field = ?"); // ex si $field est l'email : ? = email
+        $q = $db->prepare("SELECT id FROM $table WHERE $field = ?"); // l
         $q->execute([$value]);
 
         $count = $q->rowCount();
         $q->closeCursor();
-        return $count; //0 si valeur existe pas, donc false, 1 si existe DONC TRUE.
+        return $count; //0 if value exists ; so false, 1 if exists so true
     }
 }
 
@@ -126,11 +126,11 @@ if(!function_exists('redirect')){
     }
 }
 
-if(!function_exists('save_input_data')){ // sauvegarde les premieres infos écrites
+if(!function_exists('save_input_data')){ // save firsts written datas
     function save_input_data(){
-foreach($_POST as $key => $value){//key : name, password... et value : valeur du champ
- //sauvegarde des données dans un tableau associatif en session
-    if(strpos($key, 'password') === false) {//dans key : tu vas rechercher password. Si false : valeur non trouvée
+foreach($_POST as $key => $value){//key : name, password... and value : field value
+ //save datas in an array
+    if(strpos($key, 'password') === false) {//in key : find password. if false : value not found
         $_SESSION['input'][$key] = $value;
     }
 }
@@ -138,18 +138,18 @@ foreach($_POST as $key => $value){//key : name, password... et value : valeur du
     }
 }
 
-if(!function_exists('get_input')){ // sauvegarde les premieres infos écrites
+if(!function_exists('get_input')){ // save firsts written datas
     function get_input($key){
         if(!empty($_SESSION['input'][$key])){
             return e($_SESSION['input'][$key]);
         } else {
             return null;
         }
-// en ternaire : return !empty($_SESSION['input'][$key]) ? $_SESSION['input'][$key] : null;
+// ternary : return !empty($_SESSION['input'][$key]) ? $_SESSION['input'][$key] : null;
     }
 }
 
-if(!function_exists('clear_input_data')){ // sauvegarde les premieres infos écrites
+if(!function_exists('clear_input_data')){ // save firsts written datas
     function clear_input_data()
     {
         if (isset($_SESSION['input'])) {
@@ -157,17 +157,17 @@ if(!function_exists('clear_input_data')){ // sauvegarde les premieres infos écr
         }
     }
 }
-//gere l'état actif de nos différents liens
+// active state of our differents links
 if(!function_exists('set_active')){
     function set_active($file, $class = 'active'){
         $page = array_pop (explode('/', $_SERVER['SCRIPT_NAME']));
-        //array_pop récup le dernier élément de l'array.
+        //array_pop recovers the last element of the array.
         //on décompose ici le chemin présent en script name grace au $_SERVER qui nous indique les différentes maniere de récup le path
         //explode sert a la décomposition avec pour attribut / en délimiteur
         //donc chaque élément compris entre deux / seront une ligne de l'array
         //le dernier de l'array sera donc par ex : test.php
 
-        if($page == $file.'.php')//car dans le nav on n'a pas indiqué le .php
+        if($page == $file.'.php')//beacause no .php in the path
         {
             return $class;
         } else {

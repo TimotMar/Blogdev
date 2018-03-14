@@ -1,9 +1,10 @@
 <?php
 
-// Chargement des classes
+// classes loading
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 
+//all functions management
 function listPosts()
 {
     $postManager = new \Devnetwork\Blog\Model\PostManager();
