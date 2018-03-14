@@ -6,7 +6,7 @@
         <div class="container">
 
             <h1>Liste des utilisateurs</h1>
-            <?php foreach (array_chunk($users, 4) as $user_set): //représentation des users par groupe de 4 ?>
+            <?php foreach (array_chunk($users, 4) as $user_set): //recovery of users with 4 users-groups on each rows ?>
             <div class="row users">
                 <?php foreach ($user_set as $user): ?>
                 <div class="col-md-3 user-block">

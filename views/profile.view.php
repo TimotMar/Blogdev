@@ -1,7 +1,7 @@
 <?php $title = "Page de Profil"; ?>
 <?php include('partials/_header.php'); ?>
 
-
+<!-- recovery of all the datas connected to the user and protection with the e() function -->
     <div id="main-content">
         <div class="container">
             <div class="row">
@@ -48,7 +48,7 @@
 
                             <div class="row">
                               <div class="col-md-12">
-<!--Button trigger for modal--> 
+<!--Button trigger for modal to send an email--> 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Me contacter</button>
  
 <!--Begin Modal Window--> 

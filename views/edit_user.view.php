@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
 
-                <?php // on affiche la partie pr compléter le profil que si on a le meme user id
+                <?php //if same user_id : we get the possibility to change the profil parameters
                     if(!empty($_GET['id']) && $_GET['id'] === get_session('user_id')): ?>
                         <div class="col-md-6 col-md-offset-3">
 
@@ -103,19 +103,19 @@
 </form>
  
 <?php
- 
+ //adding the CV system
 if(isset($_FILES['mon_fichier']))
 {
 
     $dossier = 'C:\wamp64\www\test\devnetwork\file/';
     $fichier = basename($_FILES['mon_fichier']['name']);    
      
-    if(move_uploaded_file($_FILES['mon_fichier']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné.
+    if(move_uploaded_file($_FILES['mon_fichier']['tmp_name'], $dossier . $fichier)) //if true : the function worked
     {
 
         echo 'Upload effectué avec succès !';
     }
-    else //Sinon (la fonction renvoie FALSE).
+    else //else : get false
     {
         echo 'Echec de l\'upload !';
     }

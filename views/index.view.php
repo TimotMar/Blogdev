@@ -5,7 +5,7 @@
 
 <div id="main-content">
     <main role="main" class="container">
-
+<!-- main page of the website, including the constants WEBSITE NAME -->
         <div class="jumbotron">
             <h1><?php echo WEBSITE_NAME;?> ?</h1>
             <p class="lead"><strong> <?php echo WEBSITE_NAME;?> </strong> est un blog dédié aux développeurs.<br/>

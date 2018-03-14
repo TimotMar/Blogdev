@@ -3,7 +3,7 @@
 include('controller/filter/user_filter.php'); ?>
 
 
-<?php ob_start(); ?>
+<?php ob_start(); ?><!-- input fileds for the posts -->
 <h1>Mon blog!</h1>
 <div class="champ" style="text-align : center;">
 <form action="/index.post.php?action=addPost" method="post">
@@ -29,7 +29,7 @@ include('controller/filter/user_filter.php'); ?>
 <p style="text-align: center;"><em>Derniers billets du blog :</em></p>
 
 
-<?php
+<?php //getting all the posts with the differents functions (change, delete...)
 while ($data = $posts->fetch())
 {
 ?>

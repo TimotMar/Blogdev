@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p><a href="../index.post.php">Retour à la liste des billets</a></p>
-
+<!-- view of the modifying post page -->
 <div class="news">
     <h3>
         <?= htmlspecialchars($post['title']) ?>
@@ -31,7 +31,7 @@
     </div>
 </form>
 
-<?php
+<?php //recovery of all the comments
 while ($comment = $comments->fetch())
 {
 ?>

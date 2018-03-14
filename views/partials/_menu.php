@@ -1,5 +1,5 @@
 <nav class="navbar">
-
+<!-- menu that is set at the top of the page  -->
     <a class="navbar-brand" href="/index.php"><?php echo WEBSITE_NAME;?></a>
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">

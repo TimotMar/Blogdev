@@ -6,7 +6,7 @@
     <div class="container">
         <h1 class="lead"> Devenez membre dès à présent !</h1>
 
-        <?php
+        <?php //error function
         include('views/partials/_errors.php')
         ?>
         <form data-parsley-validate method="post" class="well col-md-6">

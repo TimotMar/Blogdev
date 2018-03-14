@@ -7,7 +7,7 @@
     <meta name="author" content="Timothee Marissal">
 
     <title>
-        <?php
+        <?php //constants website name
        echo isset($title)
         ? $title.' - ' . WEBSITE_NAME
         : WEBSITE_NAME .'- Un blog pour tous :';

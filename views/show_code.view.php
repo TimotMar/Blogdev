@@ -1,7 +1,7 @@
 <?php $title = "Affichage code source"; ?>
 <?php include('views/partials/_header.php'); ?>
 
-
+<!-- a system to share some code into the social network, not included -->
 <div id="main-content">
     <div id="main-content-share-code">
         <!-- affichage du code tel quel -->

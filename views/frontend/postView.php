@@ -5,7 +5,7 @@
 <p><a href="/index.post.php">Retour à la liste des billets</a></p>
 
 <div class="news">
-    <h3>
+    <h3> <!-- recovery of the datas in the DB  -->
         <?= htmlspecialchars($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
     </h3>
@@ -16,7 +16,7 @@
 </div>
 
 <h2>Commentaires</h2>
-
+ <!-- form to add the comments -->
 <form action="/index.post.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="author">Auteur</label><br />
@@ -31,7 +31,7 @@
     </div>
 </form>
 
-<?php
+<?php // recovery of all the comments from the datas from the DB
 while ($comment = $comments->fetch())
 {
 ?>
