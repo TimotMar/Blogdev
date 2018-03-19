@@ -4,6 +4,4 @@ session_destroy();
 
 $_SESSION = []; // emptying the array
 
-header('Location: model/login.php');
-
-?>
+header('Location: ../model/login.php');

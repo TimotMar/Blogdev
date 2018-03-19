@@ -7,11 +7,10 @@ require('../controller/includes/functions.php');
 require('config/database.php');
 require('../controller/includes/constants.php');
 
-// if post 
-if(isset($_POST['login'])) {
+// if post
+if (isset($_POST['login'])) {
     //if the fields have been filled
     if (not_empty(['identifiant', 'password'])) {
-
             extract($_POST); //access to all the variables into the post
 
             $q = $db->prepare("SELECT id, pseudo, email FROM users 
@@ -23,8 +22,7 @@ if(isset($_POST['login'])) {
             ]);
             //if user has been found : tell me how much of them you found
             $userHasBeenFound = $q->rowCount();
-
-            if($userHasBeenFound){
+        if ($userHasBeenFound) {
                 //we are allowed to recover datats because session is opened
                 $user = $q->fetch(PDO::FETCH_OBJ);
 
@@ -33,12 +31,10 @@ if(isset($_POST['login'])) {
                 $_SESSION['email'] = $user->email;
                 //we keep this as long as the session is active. user connected only if id and pseudo exist.
                 redirect_intent_or('profile.php?id='.$user->id);
-            } else {
+        } else {
                 set_flash('Combinaison Identifiant/Password incorrecte', 'danger');
                 save_input_data();
-            }
-
-
+        }
     } else {
         clear_input_data();
     }
@@ -48,4 +44,4 @@ if(isset($_POST['login'])) {
 
 <?php
 require('../views/login.view.php');
-?>
+

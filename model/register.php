@@ -4,46 +4,37 @@ session_start(); //as long as the session is not started, we can't use $session
 //die();
 include('../controller/filter/guest_filter.php');//only guest can see register
 require('../controller/includes/functions.php');
-require('model/config/database.php');
+require('../model/config/database.php');
 require('../controller/includes/constants.php');
 
 // if form is submitted
-if(isset($_POST['register']))
-{
+if (isset($_POST['register'])) {
     //if all fields are filled
-    if(not_empty(['name', 'pseudo', 'email', 'password', 'password_confirm'])){
+    if (not_empty(['name', 'pseudo', 'email', 'password', 'password_confirm'])) {
         $errors = []; // array with the errors
 
         extract($_POST); //access to $postname with name...
 
-        if(mb_strlen($pseudo) < 3){
+        if (mb_strlen($pseudo) < 3) {
             $errors[] = "Pseudo trop court ! (Minimum 3 caractères)";
         }
-
-        if(! filter_var($email, FILTER_VALIDATE_EMAIL)) //constant of php
-        {
+        if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {//constant of php
             $errors[] = "Adresse email invalide!";
         }
-        if(mb_strlen($password) < 6)
-        {
+        if (mb_strlen($password) < 6) {
             $errors[] = "Mot de passe trop court !(minimum 6 caractères)";
         } else {
-            if($password != $password_confirm)
-            {
+            if ($password != $password_confirm) {
                 $errors[] = "Les deux mots de passe ne concordent pas";
             }
         }
-        if(is_already_in_use('pseudo', $pseudo, 'users'))//verify unicity of pseudo
-        {
+        if (is_already_in_use('pseudo', $pseudo, 'users')) {//verify unicity of pseudo
             $errors[] = "Pseudo déjà utilisé";
         }
-        if(is_already_in_use('email', $email, 'users'))
-        {
+        if (is_already_in_use('email', $email, 'users')) {
             $errors[] = "Adresse email déjà utilisée";
         }
-
-        if(count($errors) == 0)
-        {
+        if (count($errors) == 0) {
             //send email activation
             $to = $email;
             $subject = WEBSITE_NAME. " - ACTIVATION DE COMPTE";
@@ -61,9 +52,10 @@ if(isset($_POST['register']))
             mail($to, $subject, $content, $headers);
 
             //inform user to check mailbox
-            set_flash ("Mail d'activation envoyé", "danger");
+            set_flash("Mail d'activation envoyé", "danger");
 
-            $q = $db->prepare('INSERT INTO users (name, pseudo, email, password) VALUES (:name, :pseudo, :email, :password)');
+            $q = $db->prepare('INSERT INTO users (name, pseudo, email, password) 
+VALUES (:name, :pseudo, :email, :password)');
             $q ->execute([
                 'name' => $name,
                 'pseudo' => $pseudo,
@@ -75,16 +67,14 @@ if(isset($_POST['register']))
 
 
 
-            redirect ('../index.php');
+            redirect('../index.php');
             exit();
         } else {
             save_input_data(); //save datas but need a function to recover them
-
         }
-
     } else {
-$errors[] = "Veuillez remplir tous les champs";
-save_input_data();
+        $errors[] = "Veuillez remplir tous les champs";
+        save_input_data();
     }
 } else {
     clear_input_data();
@@ -94,4 +84,3 @@ save_input_data();
 
 <?php
 require('../views/register.view.php');
-?>

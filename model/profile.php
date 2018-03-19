@@ -9,11 +9,11 @@ require('config/database.php');
 
 
 
-if(!empty($_GET['id'])){
+if (!empty($_GET['id'])) {
         //recovering of the user data in DB using Id
     $user = find_user_by_id($_GET['id']);
 
-    if(!$user){
+    if (!$user) {
         redirect('../index.php');
     } else {
         $q = $db->prepare('SELECT contenu, created_at FROM microposts WHERE user_id = :user_id ORDER BY created_at DESC');
@@ -22,10 +22,8 @@ if(!empty($_GET['id'])){
         ]);
         $microposts = $q->fetchAll(PDO::FETCH_OBJ);
     }
-}else {
+} else {
     redirect('profile.php?id='.get_session('user_id')); // redirection with correct id
 }
 
 require("../views/profile.view.php");
-
-
