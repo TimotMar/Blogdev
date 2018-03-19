@@ -1,8 +1,8 @@
 <?php
 
 // classes loading
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
+require_once('../model/PostManager.php');
+require_once('../model/CommentManager.php');
 
 //all functions management
 function listPosts()
@@ -10,7 +10,7 @@ function listPosts()
     $postManager = new \Devnetwork\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
 
-    require('views/frontend/listPostsView.php');
+    require('../views/frontend/listPostsView.php');
 }
 
 function post()
@@ -21,7 +21,7 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    require('views/frontend/postView.php');
+    require('../views/frontend/postView.php');
 }
 
 function modifier()
@@ -30,7 +30,7 @@ function modifier()
 
     $post = $postManager->getPost($_GET['id']);
 
-    require('views/frontend/modifier.php');
+    require('../views/frontend/modifier.php');
 }
 
 function delete()
@@ -38,7 +38,7 @@ function delete()
     $postManager = new \Devnetwork\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
 
-    require('views/frontend/listPostsView.php');
+    require('../views/frontend/listPostsView.php');
 }
 
 
@@ -53,7 +53,7 @@ function addComment($postId, $author, $comment)
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: /index.post.php?action=post&id=' . $postId);
+        header('Location: ../index.post.php?action=post&id=' . $postId);
     }
 }
 
@@ -67,7 +67,7 @@ function addPost($title, $content, $pseudonyme)
         throw new Exception('Impossible d\'ajouter l\'article !');
     }
     else {
-        header('Location: /index.post.php');
+        header('Location: ../index.post.php');
     }
 }
 
@@ -77,11 +77,10 @@ function changePost($id, $title, $content, $pseudonyme)
 
     $affectedPosts = $postManager->modifierPost($id, $title, $content, $pseudonyme);
 
-if ($affectedPosts === false) {
+    if ($affectedPosts === false) {
         throw new Exception('Impossible de changer l\'article !');
-    }
-    else {
-        header('Location: /index.post.php?action=modifier&id=' . $id);
+    } else {
+        header('Location: ../index.post.php?action=modifier&id=' . $id);
     }
 }
 
@@ -91,10 +90,9 @@ function deletePost($id)
 
     $affectedPosts = $postManager->deletePost($id);
 
-if ($affectedPosts === false) {
+    if ($affectedPosts === false) {
         throw new Exception('Impossible de supprimer l\'article !');
-    }
-    else {
-        header('Location: /index.post.php');
+    } else {
+        header('Location: ../index.post.php');
     }
 }
