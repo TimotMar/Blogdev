@@ -7,10 +7,11 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <?php if(is_logged_in() ): ?>
+            <?php if (is_logged_in()) :?>
                 <li class="dropdown <?= set_active('register')?>">
                     <a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button">
-                        <img src="<?= get_avatar_url(get_session('email')) ?>" alt="Image de profil de <?= get_session('pseudo') ?>" class="img-circle">
+                        <img src="<?= get_avatar_url(get_session('email')) ?>"
+                             alt="Image de profil de <?= get_session('pseudo') ?>" class="img-circle">
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li class=" <?= set_active('profile')?> dropdown-item">
@@ -20,7 +21,7 @@
                             <a href="../../model/edit_user.php?id=<?= get_session('user_id')?>">Edition de profil </a>
                         </li>
                         <li class="dropdown-item">
-                            <a href="/index.post.php">Blog</a>
+                            <a href="../../index.post.php">Blog</a>
                         </li>
                         <li class="divider"></li>
                         <li class="nav-item dropdown-item">

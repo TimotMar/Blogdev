@@ -1,5 +1,5 @@
 <?php $title = "Affichage code source"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('../views/partials/_header.php'); ?>
 
 <!-- a system to share some code into the social network, not included -->
 <div id="main-content">
@@ -7,8 +7,8 @@
         <!-- affichage du code tel quel -->
         <pre class="prettyprint linenums"><?= e($data->code);?></pre>
         <div class="btn-group nav-code">
-            <a href="share_code.php?id=<?= $_GET['id']?>" class="btn btn-warning">Cloner</a>
-            <a href="share_code.php" class="btn btn-primary">Nouveau</a>
+            <a href="../model/share_code.php?id=<?= $_GET['id']?>" class="btn btn-warning">Cloner</a>
+            <a href="../model/share_code.php" class="btn btn-primary">Nouveau</a>
         </div>
     </div>
 </div>

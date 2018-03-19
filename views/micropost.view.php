@@ -1,5 +1,5 @@
 <?php $title = "Blog"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('../views/partials/_header.php'); ?>
 
 <!-- blog functionnality that allows you to put some microposts into the profile page like a social network. On coding -->
 <div id="main-content">

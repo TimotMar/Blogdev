@@ -32,8 +32,7 @@
 </form>
 
 <?php //recovery of all the comments
-while ($comment = $comments->fetch())
-{
+while ($comment = $comments->fetch()) {
 ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
@@ -42,4 +41,4 @@ while ($comment = $comments->fetch())
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('views/frontend/template.php'); ?>
+<?php require('frontend/template.php'); ?>

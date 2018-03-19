@@ -1,5 +1,5 @@
 <?php $title = "Partage de codes sources"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('../views/partials/_header.php'); ?>
 <!-- a system to share some code into the social network, not included -->
 
     <div id="main-content">
@@ -8,7 +8,7 @@
                 <textarea name="code" id="code" placeholder="Entrez votre code ici"><?= e($code); ?></textarea>
 
                 <div class="btn-group nav-code">
-                    <a href="share_code.php" class="btn btn-danger">Tout effacer</a>
+                    <a href="../model/share_code.php" class="btn btn-danger">Tout effacer</a>
                     <input type="submit" name="save" class="btn btn-success" value="Enregistrer"/>
                 </div>
 
