@@ -1,4 +1,9 @@
 <?php
+/*
+*This file is used for editing your using content page
+*
+*
+**/
 session_start();
 
 include('../controller/filter/user_filter.php'); //we set the page only if the user is connected

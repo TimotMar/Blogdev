@@ -25,5 +25,5 @@
 </head>
 <body>
 
-<?php include('../partials/_menu.php'); ?>
-<?php include('../partials/_flash.php'); ?>
+<?php include('_menu.php'); ?>
+<?php include('_flash.php'); ?>

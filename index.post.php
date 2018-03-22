@@ -1,10 +1,14 @@
 <?php
+/*
+*This file is the index of the post system
+*
+*
+**/
 session_start();
-require("bootstrap/local.php");
+include('controller/includes/constants.php');
 require("controller/includes/functions.php");
 require("views/index.post.view.php");
 require('controller/frontend.php');
-include('controller/filter/user_filter.php');
 //index of the post functionnality
 //includes of all the exceptions of the post system
 

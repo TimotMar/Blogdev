@@ -1,4 +1,8 @@
 <?php $title = "Connexion"; ?>
+<!--
+*This file is used to load the html view of the login page
+*
+-->
 <?php include('partials/_header.php'); ?>
 
 

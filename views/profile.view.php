@@ -1,7 +1,11 @@
 <?php $title = "Page de Profil"; ?>
 <?php include('partials/_header.php'); ?>
+<!-- 
+*This file is used to recover of all the datas connected to the user and protection with the e() function using html
+*
+    -->
 
-<!-- recovery of all the datas connected to the user and protection with the e() function -->
+<!--  -->
     <div id="main-content">
         <div class="container">
             <div class="row">

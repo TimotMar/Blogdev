@@ -1,4 +1,9 @@
 <?php
+/*
+*This file is used for connections to the DB for the all system
+*Including constants
+*
+**/
 //DB credentials
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'boom');

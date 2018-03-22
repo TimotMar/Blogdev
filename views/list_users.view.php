@@ -1,4 +1,7 @@
 <?php $title = "Liste des utilisateurs"; ?>
+<!--
+*This file is used to load the html system of the list users 
+*    -->
 <?php include('partials/_header.php'); ?>
 
 

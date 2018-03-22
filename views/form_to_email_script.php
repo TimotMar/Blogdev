@@ -1,4 +1,9 @@
 <?php
+/*
+*This file is used for the mail sending system to the contact form
+*
+*
+**/
 if (isset($_POST['envoi'])) {
     $to = "tim.marissal@gmail.com"; // this is your Email address
     $from = $_POST['mail']; // this is the sender's Email address

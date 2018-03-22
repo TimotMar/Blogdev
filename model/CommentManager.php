@@ -1,8 +1,12 @@
 <?php
-//connections to the DB for the comment system
-namespace Devnetwork\Blog\Model;
+/*
+*This file is used for connections to the DB for the comment system
+*Using POO
+*
+**/
+namespace Devnetwork\Model;
 
-require_once("../model/Manager.php");
+require_once("model/Manager.php");
 
 class CommentManager extends Manager
 {

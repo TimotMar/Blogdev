@@ -1,5 +1,9 @@
 <?php
-
+/*
+*This file is used for loading the pages only allowed to users logged
+*
+*
+**/
 
 if (!isset($_SESSION['user_id']) && !isset($_SESSION['pseudo'])) {
     $_SESSION['forwarding_url']=$_SERVER['REQUEST_URI'] ;

@@ -1,6 +1,10 @@
 <?php $title = "Inscription"; ?>
 <?php include('partials/_header.php'); ?>
-
+<!--
+*This file is used to load the register view using html
+*
+*
+-->
 
 <div id="main-content">
     <div class="container">

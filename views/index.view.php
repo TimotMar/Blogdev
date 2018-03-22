@@ -1,4 +1,9 @@
 <?php $title = "Accueil";?>
+<!--
+*This file is used to load the html of the index system
+*
+*
+	-->
 <?php include('../controller/includes/constants.php'); ?>
 <?php include('partials/_header.php'); ?>
 

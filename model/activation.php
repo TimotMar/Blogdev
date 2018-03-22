@@ -1,4 +1,9 @@
 <?php
+/*
+*This file is used for the activation of the account
+*with some requests for the DB
+*
+**/
 session_start();
 include('../controller/filter/guest_filter.php'); //only guest can see activation.php
 require('../model/config/database.php');

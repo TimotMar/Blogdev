@@ -1,5 +1,11 @@
 <?php $title = "Edition de Profil"; ?>
-<?php include('partials/_header.php'); ?>
+
+<?php include('partials/_header.php'); 
+/*
+*This file is used for the edit user view system, such as html
+*
+*
+**/?>
 
 
     <div id="main-content">

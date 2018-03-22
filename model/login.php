@@ -1,4 +1,9 @@
 <?php
+/*
+*This file is used for the login system page
+*
+*
+**/
 session_start(); // as long as the session is not started, we can't use $session
 //var_dump($_SESSION);
 //die();

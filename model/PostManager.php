@@ -1,8 +1,13 @@
 <?php
-//managing of all the functions connected to the DB in the blog post system
-namespace Devnetwork\Blog\Model;
+/*
+*This file is used for managing of all the functions connected to the DB in the blog post system
+*Using POO
+*
+**/
 
-require_once("../model/Manager.php");
+namespace Devnetwork\Model;
+
+require_once("model/Manager.php");
 
 class PostManager extends Manager
 {

@@ -1,5 +1,9 @@
 <?php
-
+/*
+*This file regroups all the functions used on the website
+*
+*
+**/
 if (!function_exists('e')) {
     function e($string)
     {
@@ -174,10 +178,9 @@ if (!function_exists('set_active')) {
     {
         $page = array_pop(explode('/', $_SERVER['SCRIPT_NAME']));
         //array_pop recovers the last element of the array.
-        //on décompose ici le chemin présent en script name grace au $_SERVER qui nous indique les différentes maniere de récup le path
-        //explode sert a la décomposition avec pour attribut / en délimiteur
-        //donc chaque élément compris entre deux / seront une ligne de l'array
-        //le dernier de l'array sera donc par ex : test.php
+        //explode is used for the decomposition with / attribute as delimitor
+        //so : each element between two / will be a line in the array
+        //the last of the array will be for exemple : test.php
 
         if ($page == $file.'.php') {//beacause no .php in the path
             return $class;

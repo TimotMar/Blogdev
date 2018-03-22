@@ -1,4 +1,9 @@
 <?php
+/*
+*This file is used for checking the errors in case of registering
+*
+*
+**/
 session_start(); //as long as the session is not started, we can't use $session
 //var_dump($_SESSION);
 //die();

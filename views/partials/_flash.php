@@ -1,4 +1,8 @@
-<?php // flash to show errors
+<?php 
+/*
+*This file is used for flashsystem to show errors
+*
+**/
 if (isset($_SESSION['notification']['message'])) :?>
 <div class="container">
 <div class="alert alert-<?= $_SESSION['notification']['message']?>">
