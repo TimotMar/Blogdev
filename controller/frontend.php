@@ -14,7 +14,7 @@ function listPosts()
     $postManager = new \Devnetwork\Model\PostManager();
     $posts = $postManager->getPosts();
 
-    require('views/index.post.view.php');
+    require('views/listPostsView.php');
 }
 
 function post()
@@ -42,7 +42,7 @@ function delete()
     $postManager = new \Devnetwork\Model\PostManager();
     $posts = $postManager->getPosts();
 
-    require('views/index.post.view.php');
+    require('views/listPostsView.php');
 }
 
 

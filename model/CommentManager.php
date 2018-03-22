@@ -6,7 +6,7 @@
 **/
 namespace Devnetwork\Model;
 
-require_once("model/Manager.php");
+require_once("Manager.php");
 
 class CommentManager extends Manager
 {

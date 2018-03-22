@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label class="control-label" for="name">Nom:</label>
                 <input type="text" class="form-control" id="name" name="name"
-                       values ="<?= get_input('name')?>" class="form-control"
+                       values ="<?= get_input('name')?>"
                        required="required"/>
             </div>
 

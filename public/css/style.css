@@ -4,15 +4,17 @@ h1, h3
 }
 h3
 {
-    background-color:black;
+    background-color:#0000ff;
     color:white;
     font-size:0.9em;
     margin-bottom:0px;
+    border-radius: 10px;
 }
 .news p
 {
-    background-color:#CCCCCC;
+    background-color:#b3d1ff;
     margin-top:0px;
+     border-radius: 10px;
 }
 .news
 {
@@ -27,12 +29,13 @@ a
 }
 
 .champ {
-    width: 35%;
+    width: 50%;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    background-color: #f8f8f8;
+    background-color: #b3d1ff;
     resize: none;
-    margin-left: 600px;
+    margin:auto;
+     border-radius: 25px;
 }

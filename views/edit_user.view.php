@@ -1,6 +1,6 @@
 <?php $title = "Edition de Profil"; ?>
 
-<?php include('partials/_header.php'); 
+<?php include('partials/_header.php');
 /*
 *This file is used for the edit user view system, such as html
 *
@@ -107,8 +107,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="bio">Biographie<span class="text-danger">*</span></label>
-                                <textarea name="bio" id="bio" cols="36" rows="18" required="required"
-                                          class="form-control"
+                                <textarea name="bio" id="bio" cols="36" rows="18" required="required" class="form-control"
                                           value="<?= e($user->bio)?>" placeholder="J'aime la programmation...">
                                 </textarea>
                             </div>

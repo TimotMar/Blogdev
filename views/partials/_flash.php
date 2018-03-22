@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 *This file is used for flashsystem to show errors
 *

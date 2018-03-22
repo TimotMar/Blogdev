@@ -6,10 +6,10 @@
 -->
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<p><a href="index.post.php">Retour à la liste des billets</a></p>
+<p><a href="../index.post.php">Retour à la liste des billets</a></p>
 <!-- page to modify the posts with the connection to the DB -->
 <div class="champ">
-<form action="index.post.php?action=changePost&amp;id=<?= $post['id'] ?>" method="post">
+<form action="../index.post.php?action=changePost&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="title">Titre</label><br />
         <input style="width: 450px;" type="text" id="title" name="title"
