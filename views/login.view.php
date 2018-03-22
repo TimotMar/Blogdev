@@ -1,4 +1,8 @@
 <?php $title = "Connexion"; ?>
+<!--
+*This file is used to load the html view of the login page
+*
+-->
 <?php include('partials/_header.php'); ?>
 
 
@@ -13,7 +17,8 @@
                 <!-- identifiant field -->
                 <div class="form-group">
                     <label class="control-label" for="identifiant">Pseudo ou email:</label>
-                    <input type="text" class="form-control" id="identifiant" name="identifiant" values ="<?= get_input('identifiant')?>"
+                    <input type="text" class="form-control" id="identifiant" name="identifiant"
+                           values="<?= get_input('identifiant')?>"
                            required="required"/>
                 </div>
 

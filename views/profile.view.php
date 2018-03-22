@@ -1,7 +1,11 @@
 <?php $title = "Page de Profil"; ?>
 <?php include('partials/_header.php'); ?>
+<!-- 
+*This file is used to recover of all the datas connected to the user and protection with the e() function using html
+*
+    -->
 
-
+<!--  -->
     <div id="main-content">
         <div class="container">
             <div class="row">
@@ -48,7 +52,7 @@
 
                             <div class="row">
                               <div class="col-md-12">
-<!--Button trigger for modal--> 
+<!--Button trigger for modal to send an email--> 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Me contacter</button>
  
 <!--Begin Modal Window--> 
@@ -128,7 +132,8 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
 <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script> 
-<script>window.jQuery || document.write('<script src="../../../../public/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="../../../../public/assets/js/vendor/jquery-slim.min.js">' +
+        '<\/script>')</script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="../public/assets/js/jquery.timeago.js"></script>
 <script src="../public/assets/js/jquery.timeago.fr.js"></script>

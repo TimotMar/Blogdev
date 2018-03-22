@@ -1,26 +1,32 @@
 <?php $title = "Inscription"; ?>
-<?php include('views/partials/_header.php'); ?>
-
+<?php include('partials/_header.php'); ?>
+<!--
+*This file is used to load the register view using html
+*
+*
+-->
 
 <div id="main-content">
     <div class="container">
         <h1 class="lead"> Devenez membre dès à présent !</h1>
 
-        <?php
-        include('views/partials/_errors.php')
+        <?php //error function
+        include('../views/partials/_errors.php')
         ?>
         <form data-parsley-validate method="post" class="well col-md-6">
             <!-- Name field -->
             <div class="form-group">
                 <label class="control-label" for="name">Nom:</label>
-                <input type="text" class="form-control" id="name" name="name" values ="<?= get_input('name')?>" class="form-control" id="name" name="name"
+                <input type="text" class="form-control" id="name" name="name"
+                       values ="<?= get_input('name')?>"
                        required="required"/>
             </div>
 
             <!-- Pseudo field -->
             <div class="form-group">
                 <label class="control-label" for="pseudo">Pseudo:</label>
-                <input type="text" class="form-control" id="pseudo" name="pseudo" data-parsley-minlength="3" values ="<?= get_input('pseudo')?>"
+                <input type="text" class="form-control" id="pseudo" name="pseudo" data-parsley-minlength="3"
+                       values ="<?= get_input('pseudo')?>"
                        required="required"/>
             </div>
 
@@ -55,4 +61,4 @@
 </div>
 
 
-<?php include('views/partials/_footer.php'); ?>
+<?php include('partials/_footer.php'); ?>

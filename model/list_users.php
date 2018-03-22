@@ -1,6 +1,11 @@
 <?php
+/*
+*This file is used to load the list_user page
+*
+*
+**/
 session_start();
-
+//connection to the DB to select the users datas
 require('config/database.php');
 require("../controller/includes/functions.php");
 require('../controller/includes/constants.php');

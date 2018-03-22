@@ -1,9 +1,12 @@
 <?php
+/*
+*This file is used for the logout system
+*With the redirection to the login page
+*
+**/
 session_start();
 session_destroy();
 
-$_SESSION = []; // tableau vide pr bien valider qu'on a plus les infos
+$_SESSION = []; // emptying the array
 
-header('Location: model/login.php');
-
-?>
+header('Location: ../model/login.php');

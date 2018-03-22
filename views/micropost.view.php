@@ -1,7 +1,7 @@
 <?php $title = "Blog"; ?>
-<?php include('views/partials/_header.php'); ?>
+<?php include('../views/partials/_header.php'); ?>
 
-
+<!-- blog functionnality that allows you to put some microposts into the profile page like a social network. On coding -->
 <div id="main-content">
     <div class="container">
         <div class="row">
@@ -10,7 +10,7 @@
                         <form action="../model/microposts.php" method="post" data-parsley-validate>
                             <div class="form-group">
                                 <input type="text" id="pseudopost" name="pseudopost" placeholder="Votre pseudo">
-                                <label for="content" class="sr-only">Statut : </label><!-- sr only : que pr les malvoyant-->
+                                <label for="content" class="sr-only">Statut : </label><!-- sr only : for people with views problem-->
                                 <textarea class="form-control" name="content" id="content" rows="3" placeholder="Quoi de neuf?" required="required" maxlength="140" minlength="3"></textarea>
                             </div>
                             <div class="form-group status-post-submit">
