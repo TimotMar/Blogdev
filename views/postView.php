@@ -25,7 +25,7 @@
 <form action="index.post.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" value="<?php echo ' '. get_session('pseudo'). ' '; ?>"/>
+        <input type="text" id="author" name="author" value="<?php echo ' '. get_session('pseudo'). ' '; ?>" readonly/>
     </div>
     <div>
         <label for="comment">Commentaire</label><br />

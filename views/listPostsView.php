@@ -20,7 +20,7 @@
     </div>
     <div>
         <label for="pseudonyme">Pseudonyme</label><br />
-        <input type="text" id="pseudonyme" name="pseudonyme" value="<?php echo ' '. get_session('pseudo'). ' '; ?>"/>
+        <input type="text" id="pseudonyme" name="pseudonyme" value="<?php echo ' '. get_session('pseudo'). ' '; ?>" readonly/>
     </div>
     <div>
         <label for="content">Blogpost</label><br />
