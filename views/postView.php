@@ -4,6 +4,8 @@
 *
 *
 -->
+<?php include('partials/_header.php');
+?>
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p><a href="../index.post.php">Retour à la liste des billets</a></p>
@@ -25,7 +27,7 @@
 <form action="index.post.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
+        <input type="text" id="author" name="author" value="<?php echo ' '. get_session('pseudo'). ' '; ?>" readonly/>
     </div>
     <div>
         <label for="comment">Commentaire</label><br />
@@ -40,8 +42,14 @@
 <?php // recovery of all the comments from the datas from the DB
 while ($comment = $comments->fetch()) {
 ?>
+<div class="shadow">
+  <div class="container">
+    <div class="news">
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+    </div>
+  </div>
+</div>
 <?php
 }
 ?>

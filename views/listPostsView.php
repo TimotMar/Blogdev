@@ -8,6 +8,7 @@
 ?>
 
 
+
 <?php ob_start(); ?><!-- input fields for the posts only if you are logged-->
 <h1>Liste des posts!</h1>
 <div class="champ" style="text-align : center;">
@@ -19,26 +20,27 @@
     </div>
     <div>
         <label for="pseudonyme">Pseudonyme</label><br />
-        <input type="text" id="pseudonyme" name="pseudonyme" />
+        <input type="text" id="pseudonyme" name="pseudonyme" value="<?php echo ' '. get_session('pseudo'). ' '; ?>" readonly/>
     </div>
     <div>
         <label for="content">Blogpost</label><br />
         <textarea style="margin: auto;" id="content" name="content"></textarea>
     </div>
     <div>
-        <input type="submit" />
+        <input class="myButton" type="submit" />
     </div>
 </form>
 <?php endif ; ?>
 </div>
 
-
-<p style="text-align: center;"><em>Derniers billets du blog :</em></p>
+<p style="text-align: center; font-size: 10px; padding-top: 3px;"><em>Derniers billets du blog :</em></p>
 
 
 <?php //getting all the posts with the differents functions (change, delete...) only if you are logged
 while ($data = $posts->fetch()) {
 ?>
+<div class="shadow">
+  <div class="container">
     <div class="news">
         <h3>
             <?= htmlspecialchars($data['title']) ?>
@@ -55,6 +57,8 @@ while ($data = $posts->fetch()) {
         <?php endif ; ?>
         </p>
     </div>
+      </div>
+</div>
 <?php
 }
 $posts->closeCursor();

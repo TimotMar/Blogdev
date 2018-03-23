@@ -5,6 +5,9 @@
         <ul class="nav navbar-nav">
             <li><a href="../../model/list_users.php">Liste des utilisateurs</a>
             </li>
+            <li class="nav-item dropdown-item">
+            <a href="../../model/logout.php">Déconnexion</a>
+             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <?php if (is_logged_in()) :?>
@@ -24,9 +27,6 @@
                             <a href="../../index.post.php">Blog</a>
                         </li>
                         <li class="divider"></li>
-                        <li class="nav-item dropdown-item">
-                            <a href="../../model/logout.php">Déconnexion</a>
-                        </li>
                     </ul>
                 </li>
             <?php else : ?>
