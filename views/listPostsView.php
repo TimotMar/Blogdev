@@ -8,6 +8,7 @@
 ?>
 
 
+
 <?php ob_start(); ?><!-- input fields for the posts only if you are logged-->
 <h1>Liste des posts!</h1>
 <div class="champ" style="text-align : center;">
@@ -19,7 +20,7 @@
     </div>
     <div>
         <label for="pseudonyme">Pseudonyme</label><br />
-        <input type="text" id="pseudonyme" name="pseudonyme" />
+        <input type="text" id="pseudonyme" name="pseudonyme" value="<?php echo ' '. get_session('pseudo'). ' '; ?>"/>
     </div>
     <div>
         <label for="content">Blogpost</label><br />
