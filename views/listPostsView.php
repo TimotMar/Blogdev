@@ -27,19 +27,20 @@
         <textarea style="margin: auto;" id="content" name="content"></textarea>
     </div>
     <div>
-        <input type="submit" />
+        <input class="myButton" type="submit" />
     </div>
 </form>
 <?php endif ; ?>
 </div>
 
-
-<p style="text-align: center;"><em>Derniers billets du blog :</em></p>
+<p style="text-align: center; font-size: 10px; padding-top: 3px;"><em>Derniers billets du blog :</em></p>
 
 
 <?php //getting all the posts with the differents functions (change, delete...) only if you are logged
 while ($data = $posts->fetch()) {
 ?>
+<div class="shadow">
+  <div class="container">
     <div class="news">
         <h3>
             <?= htmlspecialchars($data['title']) ?>
@@ -56,6 +57,8 @@ while ($data = $posts->fetch()) {
         <?php endif ; ?>
         </p>
     </div>
+      </div>
+</div>
 <?php
 }
 $posts->closeCursor();
